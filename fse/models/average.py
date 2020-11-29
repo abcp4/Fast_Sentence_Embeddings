@@ -165,20 +165,20 @@ def train_average_np(
     return eff_sentences, eff_words
 
 
-try:
-    from fse.models.average_inner import train_average_cy
-    from fse.models.average_inner import (
-        FAST_VERSION,
-        MAX_WORDS_IN_BATCH,
-        MAX_NGRAMS_IN_BATCH,
-    )
+#try:
+from fse.models.average_inner import train_average_cy
+from fse.models.average_inner import (
+FAST_VERSION,
+MAX_WORDS_IN_BATCH,
+MAX_NGRAMS_IN_BATCH,
+)
 
-    train_average = train_average_cy
-except ImportError:
-    FAST_VERSION = -1
-    MAX_WORDS_IN_BATCH = 10000
-    MAX_NGRAMS_IN_BATCH = 40
-    train_average = train_average_np
+train_average = train_average_cy
+#except ImportError:
+#FAST_VERSION = -1
+#MAX_WORDS_IN_BATCH = 10000
+#MAX_NGRAMS_IN_BATCH = 40
+#train_average = train_average_np
 
 
 class Average(BaseSentence2VecModel):
