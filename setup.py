@@ -46,6 +46,7 @@ http://api.mongodb.org/python/current/installation.html#osx
 
     def run(self):
         try:
+            print('BUILDING!!!!')
             build_ext.run(self)
         except Exception:
             e = sys.exc_info()[1]
